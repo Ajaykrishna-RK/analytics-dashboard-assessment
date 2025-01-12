@@ -24,13 +24,14 @@ Styling: Tailwind CSS
 Charts: Chart.js
 Icons: React Icons
 Hosting Platform:Vercel
-Setup Instructions
-1. Clone the Repository
+
+## Setup Instructions
+## 1. Clone the Repository
 git clone https://github.com/your-username/analytics-dashboard-assessment.git  
 cd analytics-dashboard-assessment  
-2. Install Dependencies
+## 2. Install Dependencies
 npm install
-3. Start Server
+## 3. Start Server
 npm run dev 
 Access the app at http://localhost:5173.
 
