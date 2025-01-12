@@ -16,7 +16,8 @@ Quickly find specific EVs by make, year, or model.
 ## 3. Performance Optimization
 Efficient data handling to ensure smooth performance, even with large datasets.
 ## 4. Deployment
-Fully deployed and publicly accessible at: Live Dashboard
+Fully deployed and publicly accessible at: https://analytics-dashboard-assessment-nine.vercel.app/
+
 ## Tech Stack
 Frontend: React.js
 Styling: Tailwind CSS
@@ -35,7 +36,7 @@ Access the app at http://localhost:5173.
 
 Deployment
 The dashboard is deployed and accessible at the following URL:
-[Live Dashboard](https://analytics-dashboard-assessment-nine.vercel.app/)
+https://analytics-dashboard-assessment-nine.vercel.app/
 
 How to Use the Dashboard
 ## Explore Charts: 
@@ -54,6 +55,6 @@ Charts and metrics effectively communicate meaningful insights.
 
 
 Name: Ajay Krishna
-GitHub Profile: [Your GitHub Profile Link]
+GitHub Profile: https://github.com/Ajaykrishna-RK
 
 
