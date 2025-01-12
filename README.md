@@ -33,6 +33,7 @@ cd analytics-dashboard-assessment
 npm install
 ## 3. Start Server
 npm run dev 
+
 Access the app at http://localhost:5173.
 
 Deployment
