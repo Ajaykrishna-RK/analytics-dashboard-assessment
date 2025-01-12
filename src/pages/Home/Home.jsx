@@ -233,6 +233,25 @@ const Home = () => {
     ],
   };
 
+  const eligiblityOptions = {
+    plugins: {
+      legend: {
+        labels: {
+          color: "white",
+        },
+      },
+      tooltip: {
+        bodyColor: "white",
+      },
+
+      title: {
+        display: true,
+        text: "",
+        color: "white",
+      },
+    },
+    responsive: true,
+  };
   return (
     <>
       {loading ? (
@@ -290,7 +309,7 @@ const Home = () => {
               <h2 className="text-xl font-semibold text-white mb-4">
                 Distribution of CAFV Eligibility and PHEV Vehicles
               </h2>
-              <Doughnut data={pieChartData} options={topChartOptions} />
+              <Doughnut data={pieChartData} options={eligiblityOptions} />
             </div>
           </div>
         </div>

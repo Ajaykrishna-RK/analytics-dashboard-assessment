@@ -67,10 +67,10 @@ function SideBar({ setOpen, open }) {
               </svg>
             )}
           </div>
-          {open && <p className="font-[600]  text-[22px]">Mapup</p>}
+          {open && <p className="font-[600] text-[#111]  text-[22px]">Mapup</p>}
         </div>
 
-        <div className="mt-10 w-full">
+        <div className="mt-10 w-full text-[#111]">
           {sidebarLinks?.map((item) => (
             <Link
               to={`${item?.link}`}
