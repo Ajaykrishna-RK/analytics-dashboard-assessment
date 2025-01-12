@@ -1,4 +1,4 @@
-## Features
+
 ## 1. Dashboard Highlights
 ## Interactive Charts:
 Bar, Line, and Pie charts implemented using Chart.js.
