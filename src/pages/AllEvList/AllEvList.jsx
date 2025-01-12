@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ApiContext } from "../../context/ApiContext";
+import Loading from "../../components/Loading/Loading";
 
 function AllEvList() {
   const {
@@ -26,82 +27,61 @@ function AllEvList() {
   });
 
   return (
-    <div className="App">
-      <h1 className="text-2xl font-bold text-start mb-4">EV List</h1>
-      <input
-        type="text"
-        placeholder="Search by Make, Model, Year, or Range"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className="w-full p-2 mb-4 border border-gray-300 rounded"
-      />
+    <div className="p-[10px]  mx-auto">
+      <h1 className="text-3xl font-semibold text-gray-800 mb-6">
+        EV Dashboard
+      </h1>
+      <div className="mb-6">
+        <input
+          type="text"
+          placeholder="Search by Make, Model, Year, or Range..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
       {loading ? (
-        <p className="text-[24px]">Loading...</p>
+        <Loading />
       ) : error ? (
-        <p className="text-red-500">Error: {error}</p>
+        <p className="text-xl text-red-500">Error: {error}</p>
       ) : (
         <div>
-          <table className="min-w-full border-collapse border border-gray-200">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border border-gray-300 px-4 py-2 text-left">
-                  Model
-                </th>
-                <th className="border border-gray-300 px-4 py-2 text-left">
-                  Make
-                </th>
-                <th className="border border-gray-300 px-4 py-2 text-left">
-                  Year
-                </th>
-                <th className="border border-gray-300 px-4 py-2 text-left">
-                  Range (miles)
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredData?.length > 0 ? (
-                filteredData?.map((item, index) => (
-                  <tr
-                    key={index}
-                    className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
-                  >
-                    <td className="border border-gray-300 px-4 py-2">
-                      {item.Model}
-                    </td>
-                    <td className="border border-gray-300 px-4 py-2">
-                      {item.Make}
-                    </td>
-                    <td className="border border-gray-300 px-4 py-2">
-                      {item["Model Year"]}
-                    </td>
-                    <td className="border border-gray-300 px-4 py-2">
-                      {item["Electric Range"]}
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td
-                    colSpan="4"
-                    className="border border-gray-300 px-4 py-2 text-center"
-                  >
-                    No results found.
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-          <div className="flex justify-between mt-4">
+          {filteredData?.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {filteredData?.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-lg shadow-md p-4 border border-gray-200"
+                >
+                  <h2 className="text-lg font-bold text-gray-700 mb-2">
+                    {item.Model}
+                  </h2>
+                  <p className="text-gray-600">
+                    <strong>Make:</strong> {item.Make}
+                  </p>
+                  <p className="text-gray-600">
+                    <strong>Year:</strong> {item["Model Year"]}
+                  </p>
+                  <p className="text-gray-600">
+                    <strong>Range:</strong> {item["Electric Range"]} miles
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-gray-500 text-center mt-6">No results found.</p>
+          )}
+          <div className="flex justify-between items-center mt-8">
             <button
               onClick={handlePrev}
               disabled={currentPage === 0}
-              className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+              className="px-4 py-2 bg-gray-200 text-gray-600 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Prev
             </button>
             <button
               onClick={handleNext}
-              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={currentPage * itemsPerPage >= data.length}
             >
               Next

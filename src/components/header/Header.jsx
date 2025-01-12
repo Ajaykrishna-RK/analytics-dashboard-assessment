@@ -1,8 +1,8 @@
 import React from "react";
 
-function Header({ open, setOpen }) {
+function Header() {
   return (
-    <nav className="bg-[#fff] shadow-lg text-[#111] p-4">
+    <nav className="bg-[#fff] z-[100] shadow-lg text-[#111] p-4">
       <span className=" text-xl font-semibold">Ev Dataset</span>
     </nav>
   );

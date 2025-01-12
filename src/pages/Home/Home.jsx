@@ -16,6 +16,7 @@ import { FaCar, FaBatteryFull, FaChartBar } from "react-icons/fa";
 import { MdOutlineElectricCar } from "react-icons/md";
 import _ from "lodash";
 import { ApiContext } from "../../context/ApiContext";
+import Loading from "../../components/Loading/Loading";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -235,7 +236,7 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <p>Loading...</p>
+        <Loading />
       ) : (
         <div className="min-h-[500px] text-[#fff] ">
           <h1 className="text-start text-[#111] text-3xl font-bold mb-4">
