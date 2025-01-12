@@ -20,9 +20,13 @@ Fully deployed and publicly accessible at: https://analytics-dashboard-assessmen
 
 ## Tech Stack
 Frontend: React.js
+
 Styling: Tailwind CSS
+
 Charts: Chart.js
+
 Icons: React Icons
+
 Hosting Platform:Vercel
 
 ## Setup Instructions
