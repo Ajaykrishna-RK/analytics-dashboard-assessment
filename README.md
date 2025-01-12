@@ -36,11 +36,11 @@ npm run dev
 
 Access the app at http://localhost:5173.
 
-Deployment
+## Deployment
 The dashboard is deployed and accessible at the following URL:
 https://analytics-dashboard-assessment-nine.vercel.app/
 
-How to Use the Dashboard
+## How to Use the Dashboard
 ## Explore Charts: 
 Visualize EV trends by year, make, and range.
 ## Search & Filter: 
